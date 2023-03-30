@@ -1,11 +1,9 @@
-const express   = require('express');
-const connectDB = require('./config/db');
+const databaseConnector = require('./server/config/database');
 
-const app     = express();
+databaseConnector()
+  .then(() => {
+    console.log('Database: Connected successfully');
 
-connectDB();
-
-const port    = process.env.PORT || 8082;
-
-app.get('/', (req, res) => res.send('Hello'));
-app.listen(port, () => console.log(`Server running on port ${port}`));
+    require('./server/main');
+  })
+  .catch(console.error);
