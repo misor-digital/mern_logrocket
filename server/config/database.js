@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 
-function connectToDB() {
-  const databaseString = require('./index').databaseString;
-
+function connectToDB(databaseString) {
   return mongoose.connect(
     databaseString,
     {

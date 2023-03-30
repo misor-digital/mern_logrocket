@@ -1,6 +1,7 @@
 const databaseConnector = require('./server/config/database');
+const databaseString = require('./server/config/index').databaseString;
 
-databaseConnector()
+databaseConnector(databaseString)
   .then(() => {
     console.log('Database: Connected successfully');
 
