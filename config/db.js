@@ -6,7 +6,6 @@ function connectToDB() {
     return mongoose.connect(
         databaseString,
         {
-            useCreateIndex     : true,
             useNewUrlParser    : true,
             useUnifiedTopology : true,
         }
