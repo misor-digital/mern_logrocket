@@ -1,5 +1,10 @@
-const express = require('express');
+const express   = require('express');
+const connectDB = require('./config/db');
+
 const app     = express();
+
+connectDB();
+
 const port    = process.env.PORT || 8082;
 
 app.get('/', (req, res) => res.send('Hello'));
