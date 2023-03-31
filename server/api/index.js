@@ -3,6 +3,7 @@ const routers = require('./routers');
 
 // Bind routers to routes
 router.use('/books', routers.book);
+router.use('/cookie', routers.cookie);
 
 // Any other route
 router.all('*', function (req, res, next) {
