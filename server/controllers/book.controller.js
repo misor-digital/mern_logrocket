@@ -20,7 +20,7 @@ function getById(req, res, next) {
 
   models.Book.findById(req.params.id)
     .then(book => res.json(book))
-    .catch(err => res.status(404).json({ nobooksfound: 'No Books found' }));  
+    .catch(err => res.status(404).json({ nobooksfound: 'No Books found' }));
 }
 
 // @route       POST api/books
