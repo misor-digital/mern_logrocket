@@ -5,7 +5,7 @@ const models = require('../models');
 // @access      Public
 function get(req, res, next) {
   models.Book.find()
-    .then(books => res.join(books))
+    .then(books => res.json(books))
     .catch(err => res.status(404).json({ nobooksfound: 'No Books found' }));
 }
 
