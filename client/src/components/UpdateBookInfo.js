@@ -3,15 +3,10 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 
+import BookModel from '../CreateBook/CreateBookModel';
+
 function UpdateBookInfo(props) {
-  const [book, setBook] = useState({
-    title: '',
-    isbn: '',
-    author: '',
-    description: '',
-    published_date: '',
-    publisher: '',
-  });
+  const [book, setBook] = useState(BookModel);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -66,7 +61,7 @@ function UpdateBookInfo(props) {
         <div className='row'>
           <div className='col-md-8 m-auto'>
             <br />
-            <Link to='/' className='btn btn-outline-warning float-left'>
+            <Link to='/books' className='btn btn-outline-warning float-left'>
               Show BooK List
             </Link>
           </div>

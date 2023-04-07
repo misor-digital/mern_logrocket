@@ -1,44 +1,12 @@
-import React, { useState }   from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import axios                 from 'axios';
+import React    from 'react';
+import { Link } from  'react-router-dom';
 
-const CreateBook = (props) => {
-  // Define the state with useState hook
-  const navigate          = useNavigate();
-  const [ book, setBook ] = useState({
-    title          : '',
-    isbn           : '',
-    author         : '',
-    description    : '',
-    published_date : '',
-    publisher      : '',
-  });
-
-  const onChange = (e) => {
-    setBook({ ...book, [e.target.name] : e.target.value });
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    axios
-      .post('http://localhost:8082/api/books', book)
-      .then(res => {
-        setBook({
-          title          : '',
-          isbn           : '',
-          author         : '',
-          description    : '',
-          published_date : '',
-          publisher      : '',
-        });
-
-        navigate('/');
-      })
-      .catch(err => {
-        console.error('Error in CreateBook');
-      });
-  };
+const CreateBookView = (props) => {
+  const {
+    model,
+    onChange,
+    onSubmit
+  } = props;
 
   return (
     <div className='CreateBook'>
@@ -46,8 +14,8 @@ const CreateBook = (props) => {
         <div className='row'>
           <div className='col-md-8 m-auto'>
             <br />
-            <Link to='/' className='btn btn-outline-warning float-left'>
-              Show BooK List
+            <Link to='/books' className='btn btn-outline-warning float-left'>
+              Show Book List
             </Link>
           </div>
           <div className='col-md-8 m-auto'>
@@ -61,7 +29,7 @@ const CreateBook = (props) => {
                   placeholder='Title of the Book'
                   name='title'
                   className='form-control'
-                  value={book.title}
+                  value={model.title}
                   onChange={onChange}
                 />
               </div>
@@ -73,7 +41,7 @@ const CreateBook = (props) => {
                   placeholder='ISBN'
                   name='isbn'
                   className='form-control'
-                  value={book.isbn}
+                  value={model.isbn}
                   onChange={onChange}
                 />
               </div>
@@ -84,7 +52,7 @@ const CreateBook = (props) => {
                   placeholder='Author'
                   name='author'
                   className='form-control'
-                  value={book.author}
+                  value={model.author}
                   onChange={onChange}
                 />
               </div>
@@ -95,7 +63,7 @@ const CreateBook = (props) => {
                   placeholder='Describe this book'
                   name='description'
                   className='form-control'
-                  value={book.description}
+                  value={model.description}
                   onChange={onChange}
                 />
               </div>
@@ -106,7 +74,7 @@ const CreateBook = (props) => {
                   placeholder='published_date'
                   name='published_date'
                   className='form-control'
-                  value={book.published_date}
+                  value={model.published_date}
                   onChange={onChange}
                 />
               </div>
@@ -116,7 +84,7 @@ const CreateBook = (props) => {
                   placeholder='Publisher of this Book'
                   name='publisher'
                   className='form-control'
-                  value={book.publisher}
+                  value={model.publisher}
                   onChange={onChange}
                 />
               </div>
@@ -133,4 +101,5 @@ const CreateBook = (props) => {
   );
 };
 
-export default CreateBook;
+export default CreateBookView;
+

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
 
-import CreateBook      from "./components/CreateBook";
+import CreateBook      from "./CreateBook";
 import ShowBookList    from "./components/ShowBookList";
 import ShowBookDetails from "./components/ShowBookDetails";
 import UpdateBookInfo  from "./components/UpdateBookInfo";
@@ -11,10 +11,10 @@ const App = () => {
     <Router>
       <div>
         <Routes>
-          <Route path = "/"              element = { <ShowBookList /> } exact />
-          <Route path = "/create-book"   element = { <CreateBook /> } />
-          <Route path = "/edit-book/:id" element = { <UpdateBookInfo /> } />
-          <Route path = "/show-book/:id" element = { <ShowBookDetails /> } />
+          <Route path = "/books"          element = { <ShowBookList /> } exact />
+          <Route path = "/books/create"   element = { <CreateBook /> } />
+          <Route path = "/books/:id"      element = { <ShowBookDetails /> } />
+          <Route path = "/books/:id/edit" element = { <UpdateBookInfo /> } />
         </Routes>
       </div>
     </Router>

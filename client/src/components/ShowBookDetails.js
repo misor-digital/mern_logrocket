@@ -76,7 +76,7 @@ function ShowBookDetails(props) {
         <div className='row'>
           <div className='col-md-10 m-auto'>
             <br /> <br />
-            <Link to='/' className='btn btn-outline-warning float-left'>
+            <Link to='/books' className='btn btn-outline-warning float-left'>
               Show Book List
             </Link>
           </div>
@@ -100,7 +100,7 @@ function ShowBookDetails(props) {
           </div>
           <div className='col-md-6 m-auto'>
             <Link
-              to={`/edit-book/${book._id}`}
+              to={`/books/${book._id}/edit`}
               className='btn btn-outline-info btn-lg btn-block'
             >
               Edit Book
