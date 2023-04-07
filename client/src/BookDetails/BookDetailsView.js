@@ -5,7 +5,7 @@ import '../App.css';
 
 import BookItemView from './BookItemView';
 
-function ShowBookDetails(props) {
+function BookDetails(props) {
   const {
     model,
     onDelete
@@ -53,4 +53,4 @@ function ShowBookDetails(props) {
   );
 }
 
-export default ShowBookDetails;
+export default BookDetails;

@@ -1,59 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React    from 'react';
+import { Link } from 'react-router-dom';
+
 import '../App.css';
 
-import BookModel from '../CreateBook/CreateBookModel';
-
-function UpdateBookInfo(props) {
-  const [book, setBook] = useState(BookModel);
-
-  const { id } = useParams();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8082/api/books/${id}`)
-      .then((res) => {
-        setBook({
-          title: res.data.title,
-          isbn: res.data.isbn,
-          author: res.data.author,
-          description: res.data.description,
-          published_date: res.data.published_date,
-          publisher: res.data.publisher,
-        });
-      })
-      .catch((err) => {
-        console.log('Error from UpdateBookInfo');
-      });
-  }, [id]);
-
-  const onChange = (e) => {
-    setBook({ ...book, [e.target.name]: e.target.value });
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    const data = {
-      title: book.title,
-      isbn: book.isbn,
-      author: book.author,
-      description: book.description,
-      published_date: book.published_date,
-      publisher: book.publisher,
-    };
-
-    axios
-      .put(`http://localhost:8082/api/books/${id}`, data)
-      .then((res) => {
-        navigate(`/show-book/${id}`);
-      })
-      .catch((err) => {
-        console.log('Error in UpdateBookInfo!');
-      });
-  };
+function UpdateBookView(props) {
+  const { 
+    model,
+    onChange,
+    onSubmit
+  } = props;
 
   return (
     <div className='UpdateBookInfo'>
@@ -62,7 +17,7 @@ function UpdateBookInfo(props) {
           <div className='col-md-8 m-auto'>
             <br />
             <Link to='/books' className='btn btn-outline-warning float-left'>
-              Show BooK List
+              Show Book List
             </Link>
           </div>
           <div className='col-md-8 m-auto'>
@@ -80,7 +35,7 @@ function UpdateBookInfo(props) {
                 placeholder='Title of the Book'
                 name='title'
                 className='form-control'
-                value={book.title}
+                value={model.title}
                 onChange={onChange}
               />
             </div>
@@ -93,7 +48,7 @@ function UpdateBookInfo(props) {
                 placeholder='ISBN'
                 name='isbn'
                 className='form-control'
-                value={book.isbn}
+                value={model.isbn}
                 onChange={onChange}
               />
             </div>
@@ -106,7 +61,7 @@ function UpdateBookInfo(props) {
                 placeholder='Author'
                 name='author'
                 className='form-control'
-                value={book.author}
+                value={model.author}
                 onChange={onChange}
               />
             </div>
@@ -119,7 +74,7 @@ function UpdateBookInfo(props) {
                 placeholder='Description of the Book'
                 name='description'
                 className='form-control'
-                value={book.description}
+                value={model.description}
                 onChange={onChange}
               />
             </div>
@@ -132,7 +87,7 @@ function UpdateBookInfo(props) {
                 placeholder='Published Date'
                 name='published_date'
                 className='form-control'
-                value={book.published_date}
+                value={model.published_date}
                 onChange={onChange}
               />
             </div>
@@ -145,7 +100,7 @@ function UpdateBookInfo(props) {
                 placeholder='Publisher of the Book'
                 name='publisher'
                 className='form-control'
-                value={book.publisher}
+                value={model.publisher}
                 onChange={onChange}
               />
             </div>
@@ -164,4 +119,4 @@ function UpdateBookInfo(props) {
   );
 }
 
-export default UpdateBookInfo;
+export default UpdateBookView;

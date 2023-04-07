@@ -22,7 +22,7 @@ const CreateBook = (props) => {
       .then(res => {
         setBook(Model);
 
-        navigate('/');
+        navigate('/books');
       })
       .catch(err => {
         console.error('Error in CreateBook');
