@@ -1,23 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import '../App.css';
-import axios from 'axios';
+import React    from 'react';
 import { Link } from 'react-router-dom';
-import BookCard from './BookCard';
 
-function ShowBookList() {
-  const [books, setBooks] = useState([]);
+import BookCard from './BookCardView';
 
-  useEffect(() => {
-    axios
-      .get('http://localhost:8082/api/books')
-      .then((res) => {
-        setBooks(res.data);
-      })
-      .catch((err) => {
-        console.log('Error from ShowBookList');
-      });
-  }, []);
+import '../App.css';
 
+function BookListView(props) {
+  const books = props.model;
   const bookList =
     books.length === 0
       ? 'there is no book record!'
@@ -51,4 +40,4 @@ function ShowBookList() {
   );
 }
 
-export default ShowBookList;
+export default BookListView;
