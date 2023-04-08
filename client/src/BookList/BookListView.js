@@ -1,16 +1,18 @@
-import React    from 'react';
 import { Link } from 'react-router-dom';
 
 import BookCard from './BookCardView';
 
-import '../App.css';
-
-function BookListView(props) {
-  const books = props.model;
-  const bookList =
-    books.length === 0
-      ? 'there is no book record!'
-      : books.map((book, k) => <BookCard book={book} key={k} />);
+const BookListView = (props) => {
+  const { model } = props;
+  const bookList  =
+    model.length === 0
+      ? 'There is no book record!'
+      : model.map((book, k) =>
+        <BookCard
+          model = { book }
+          key={k}
+        />
+      );
 
   return (
     <div className='ShowBookList'>

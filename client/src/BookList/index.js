@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from 'react';
+import axios                   from 'axios';
 
-import View from './BookListView';
+import Model from '../models/Book';
+import View  from './BookListView';
 
 function BookList() {
-  const [ books, setBooks ] = useState([]);
+  const [ books, setBooks ] = useState([Model]);
 
   useEffect(() => {
     axios
@@ -18,7 +19,9 @@ function BookList() {
   }, []);
 
   return (
-    <View model = { books } />
+    <View
+      model = { books }
+    />
   );
 }
 

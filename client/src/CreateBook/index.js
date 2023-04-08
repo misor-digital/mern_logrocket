@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate }     from 'react-router-dom';
-import axios               from 'axios';
+import { useState }    from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios           from 'axios';
 
 import Model from '../models/Book';
 import View  from './CreateBookView';
@@ -20,12 +20,13 @@ const CreateBook = (props) => {
     axios
       .post('http://localhost:8082/api/books', book)
       .then(res => {
+        console.log(res);
         setBook(Model);
 
         navigate('/books');
       })
       .catch(err => {
-        console.error('Error in CreateBook');
+        console.error('Error in CreateBook', err);
       });
   };
 

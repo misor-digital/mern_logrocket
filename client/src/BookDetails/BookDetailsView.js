@@ -1,11 +1,8 @@
-import React    from 'react';
 import { Link } from 'react-router-dom';
 
-import '../App.css';
+import BookItem from './BookItemView';
 
-import BookItemView from './BookItemView';
-
-function BookDetailsView(props) {
+const BookDetailsView = (props) => {
   const {
     model,
     onDelete
@@ -28,7 +25,7 @@ function BookDetailsView(props) {
             <hr /> <br />
           </div>
           <div className='col-md-10 m-auto'>
-            <BookItemView model = { model } />
+            <BookItem model = { model } />
           </div>
           <div className='col-md-6 m-auto'>
             <button

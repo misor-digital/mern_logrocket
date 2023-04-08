@@ -1,9 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css';
 
 const BookCard = (props) => {
-  const book = props.book;
+  const { model } = props;
 
   return (
     <div className='card-container'>
@@ -14,10 +12,10 @@ const BookCard = (props) => {
       />
       <div className='desc'>
         <h2>
-          <Link to={`/books/${book._id}`}>{book.title}</Link>
+          <Link to={`/books/${model._id}`}>{model.title}</Link>
         </h2>
-        <h3>{book.author}</h3>
-        <p>{book.description}</p>
+        <h3>{model.author}</h3>
+        <p>{model.description}</p>
       </div>
     </div>
   );

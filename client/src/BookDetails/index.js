@@ -2,12 +2,16 @@ import { useState, useEffect }    from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios                      from 'axios';
 
-import View from './BookDetailsView';
+import Model from '../models/Book';
+import View  from './BookDetailsView';
 
 function BookDetails() {
-  const [book, setBook] = useState({});
+  const [
+    book,
+    setBook
+  ] = useState({ Model });
 
-  const { id } = useParams();
+  const { id }   = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {

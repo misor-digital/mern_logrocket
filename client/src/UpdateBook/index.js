@@ -1,8 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect }    from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-
-import '../App.css';
+import axios                      from 'axios';
 
 import Model from '../models/Book';
 import View  from './UpdateBookView';
