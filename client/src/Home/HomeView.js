@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { ButtonLink } from "../components/elements/buttons";
 
 const HomeView = (props) => {
   return (
@@ -11,12 +11,11 @@ const HomeView = (props) => {
           </div>
 
           <div className="col-md-11">
-            <Link
-              to="/books"
-              className="btn btn-outline-warning float-right"
-            >
-              Show Book List
-            </Link>
+            <ButtonLink
+              path      = '/books'
+              className = 'btn-outline-warning float-right'
+              title     = 'Show Book List'
+            />
             <br />
             <br />
             <hr />

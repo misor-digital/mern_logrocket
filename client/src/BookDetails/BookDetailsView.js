@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Button, ButtonLink } from '../components/elements/buttons';
 
 import BookItem from './BookItemView';
 
@@ -14,9 +14,11 @@ const BookDetailsView = (props) => {
         <div className='row'>
           <div className='col-md-10 m-auto'>
             <br /> <br />
-            <Link to='/books' className='btn btn-outline-warning float-left'>
-              Show Book List
-            </Link>
+            <ButtonLink
+              path      = '/books'
+              className = 'btn-outline-warning float-left'
+              title     = 'Show Book List'
+            />
           </div>
           <br />
           <div className='col-md-8 m-auto'>
@@ -28,23 +30,20 @@ const BookDetailsView = (props) => {
             <BookItem model = { model } />
           </div>
           <div className='col-md-6 m-auto'>
-            <button
-              type='button'
-              className='btn btn-outline-danger btn-lg btn-block'
-              onClick={() => {
+            <Button
+              title       = 'Delete Book'
+              className   = 'btn-outline-danger btn-lg btn-block'
+              handleClick = {() => {
                 onDelete(model._id);
               }}
-            >
-              Delete Book
-            </button>
+            />
           </div>
           <div className='col-md-6 m-auto'>
-            <Link
-              to={`/books/${model._id}/edit`}
-              className='btn btn-outline-info btn-lg btn-block'
-            >
-              Edit Book
-            </Link>
+            <ButtonLink
+              path      = {`/books/${model._id}/edit`}
+              className = 'btn-lg btn-outline-info btn-block'
+              title     = 'Edit Book'
+            />
           </div>
         </div>
       </div>

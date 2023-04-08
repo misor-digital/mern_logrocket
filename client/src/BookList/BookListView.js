@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { ButtonLink } from '../components/elements/buttons';
 
 import BookCard from './BookCardView';
 
@@ -24,12 +24,11 @@ const BookListView = (props) => {
           </div>
 
           <div className='col-md-11'>
-            <Link
-              to='/books/create'
-              className='btn btn-outline-warning float-right'
-            >
-              + Add New Book
-            </Link>
+            <ButtonLink
+              path      = '/books/create'
+              className = 'btn-outline-warning float-right'
+              title     = '+ Add New Book'
+            />
             <br />
             <br />
             <hr />

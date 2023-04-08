@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { ButtonLink } from "../components/elements/buttons";
 
 const BookCard = (props) => {
   const { model } = props;
@@ -12,7 +12,10 @@ const BookCard = (props) => {
       />
       <div className='desc'>
         <h2>
-          <Link to={`/books/${model._id}`}>{model.title}</Link>
+          <ButtonLink
+            path  = { `/books/${model._id}` }
+            title = { model.title }
+          />
         </h2>
         <h3>{model.author}</h3>
         <p>{model.description}</p>
