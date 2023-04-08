@@ -8,7 +8,7 @@ const UpdateBookView = (props) => {
   } = props;
 
   return (
-    <div className='UpdateBookInfo'>
+    <div className='main-container'>
       <div className='container'>
         <div className='row'>
           <div className='col-md-8 m-auto'>

@@ -15,7 +15,7 @@ const BookListView = (props) => {
       );
 
   return (
-    <div className='ShowBookList'>
+    <div className='main-container show-book-list'>
       <div className='container'>
         <div className='row'>
           <div className='col-md-12'>

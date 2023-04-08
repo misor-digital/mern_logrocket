@@ -5,7 +5,7 @@ import axios           from 'axios';
 import Model from '../models/Book';
 import View  from './CreateBookView';
 
-const CreateBook = (props) => {
+const CreateBook = () => {
   // Define the state with useState hook
   const navigate          = useNavigate();
   const [ book, setBook ] = useState(Model);

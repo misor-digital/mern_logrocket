@@ -1,4 +1,4 @@
-import { Link } from  'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const CreateBookView = (props) => {
   const {
@@ -8,7 +8,7 @@ const CreateBookView = (props) => {
   } = props;
 
   return (
-    <div className='CreateBook'>
+    <div className='main-container'>
       <div className='container'>
         <div className='row'>
           <div className='col-md-8 m-auto'>
