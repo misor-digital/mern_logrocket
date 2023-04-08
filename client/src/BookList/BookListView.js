@@ -25,6 +25,11 @@ const BookListView = (props) => {
 
           <div className='col-md-11'>
             <ButtonLink
+              path      = '/'
+              className = 'btn-outline-warning float-left'
+              title     = 'Home'
+            />
+            <ButtonLink
               path      = '/books/create'
               className = 'btn-outline-warning float-right'
               title     = '+ Add New Book'
