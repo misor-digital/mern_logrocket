@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate }     from 'react-router-dom';
 import axios               from 'axios';
 
-import Model from './CreateBookModel';
+import Model from '../models/Book';
 import View  from './CreateBookView';
 
 const CreateBook = (props) => {

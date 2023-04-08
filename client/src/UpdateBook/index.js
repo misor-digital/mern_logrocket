@@ -4,11 +4,11 @@ import axios from 'axios';
 
 import '../App.css';
 
-import BookModel from '../CreateBook/CreateBookModel';
-import View from './UpdateBookView';
+import Model from '../models/Book';
+import View  from './UpdateBookView';
 
 function UpdateBookInfo() {
-  const [book, setBook] = useState(BookModel);
+  const [ book, setBook ] = useState(Model);
 
   const { id } = useParams();
   const navigate = useNavigate();
